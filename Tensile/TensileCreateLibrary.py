@@ -172,8 +172,8 @@ def buildSourceCodeObjectFile(CxxCompiler, outputPath, kernelFile):
       for arch in globalParameters['SupportedISA']:
         if isSupported(arch):
           if (arch == (9,0,6) or arch == (9,0,8)):
-            archs += ['gfx'+''.join(map(str,arch))+'-xnack-']
-            cmdlineArchs += ['gfx'+''.join(map(str,arch))+':xnack-']
+            archs += ['gfx'+''.join(map(str,arch))+'-xnack+']
+            cmdlineArchs += ['gfx'+''.join(map(str,arch))+':xnack+']
           else:
             archs += ['gfx'+''.join(map(str,arch))]
             cmdlineArchs += ['gfx'+''.join(map(str,arch))]
@@ -1062,7 +1062,7 @@ def buildObjectFileNames(solutionWriter, kernelWriterSource, kernelWriterAssembl
     for arch in globalParameters['SupportedISA']:
       if isSupported(arch):
         if (arch == (9,0,6) or arch == (9,0,8)):
-          sourceArchs += ['gfx'+''.join(map(str,arch))+'-xnack-']
+          sourceArchs += ['gfx'+''.join(map(str,arch))+'-xnack+']
         else:
           sourceArchs += ['gfx'+''.join(map(str,arch))]
   else:
